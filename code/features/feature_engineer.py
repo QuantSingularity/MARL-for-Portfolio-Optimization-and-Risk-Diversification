@@ -58,8 +58,7 @@ class FeatureEngineer:
         returns: pd.DataFrame, window: int = 30
     ) -> pd.DataFrame:
         """Compute rolling correlation features"""
-        # BUG FIX: n_assets was computed but immediately discarded (unused variable).
-        # Removed the dead-code assignment.
+
         corr_features = pd.DataFrame(index=returns.index)
 
         # Rolling correlation matrix
