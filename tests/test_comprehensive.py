@@ -10,10 +10,10 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from config import Config, get_state_dim, get_action_dim
-from data_loader import MarketDataLoader
-from environment import MultiAgentPortfolioEnv
-from maddpg_agent import MADDPGTrainer, MADDPGAgent
+from code.config import Config, get_state_dim, get_action_dim
+from code.data_loader import MarketDataLoader
+from code.environment import MultiAgentPortfolioEnv
+from code.maddpg_agent import MADDPGTrainer, MADDPGAgent
 
 
 class TestConfig:
@@ -161,11 +161,15 @@ class TestMADDPGAgent:
         state_dim = 20  # Simplified
         action_dim = 2
 
+        global_state_dim = state_dim * 2 + 2  # 2 agents + capital ratios
+        total_action_dim = action_dim * 2  # 2 agents
+
         agent = MADDPGAgent(
             agent_id=0,
             state_dim=state_dim,
             action_dim=action_dim,
-            n_agents=2,
+            global_state_dim=global_state_dim,
+            total_action_dim=total_action_dim,
             config=config,
         )
 
@@ -210,12 +214,15 @@ class TestMADDPGAgent:
 
         agent.save(str(save_path))
 
-        # Load into new agent
+        global_state_dim = state_dim * 2 + 2
+        total_action_dim = action_dim * 2
+
         new_agent = MADDPGAgent(
             agent_id=0,
             state_dim=state_dim,
             action_dim=action_dim,
-            n_agents=2,
+            global_state_dim=global_state_dim,
+            total_action_dim=total_action_dim,
             config=agent.config,
         )
         new_agent.load(str(save_path))
@@ -282,6 +289,7 @@ class TestAPI:
 
     @pytest.fixture
     def client(self):
+
         from code.api.main import app
         from fastapi.testclient import TestClient
 
@@ -297,7 +305,7 @@ class TestAPI:
         try:
             response = client.get("/models/info?model_type=full")
             assert response.status_code in [200, 404]
-        except:
+        except Exception:
             pass
 
 
@@ -340,8 +348,11 @@ class TestStatisticalSignificance:
         returns1 = np.random.normal(0.001, 0.02, 252)  # Strategy 1
         returns2 = np.random.normal(0.0005, 0.02, 252)  # Strategy 2
 
-        np.mean(returns1) / np.std(returns1) * np.sqrt(252)
-        np.mean(returns2) / np.std(returns2) * np.sqrt(252)
+        sharpe1 = np.mean(returns1) / np.std(returns1) * np.sqrt(252)
+        sharpe2 = np.mean(returns2) / np.std(returns2) * np.sqrt(252)
+
+        assert isinstance(sharpe1, float)
+        assert isinstance(sharpe2, float)
 
         # Simple t-test for difference in means
         from scipy import stats

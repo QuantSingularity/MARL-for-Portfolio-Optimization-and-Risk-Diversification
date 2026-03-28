@@ -153,11 +153,7 @@ def evaluate(config: Config, model_path: str, save_dir: str):
     for agent in trainer.agents:
         agent.load(model_path)
 
-    # Evaluate on test set
-    print("\nEvaluating MADDPG on test set...")
     test_start, test_end = data["test_indices"]
-    env.reset(start_idx=test_start, end_idx=test_end)
-
     states = env.reset(start_idx=test_start, end_idx=test_end)
 
     while not env.done:

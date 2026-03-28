@@ -465,12 +465,14 @@ async def get_system_stats():
     """Get system statistics"""
     import psutil
 
+    start_time = getattr(app.state, "start_time", datetime.now())
+
     return {
         "cpu_percent": psutil.cpu_percent(),
         "memory_percent": psutil.virtual_memory().percent,
         "models_loaded": len(model_store.models),
         "active_portfolios": len(model_store.portfolios),
-        "uptime_seconds": (datetime.now() - app.state.start_time).total_seconds(),
+        "uptime_seconds": (datetime.now() - start_time).total_seconds(),
     }
 
 

@@ -264,10 +264,12 @@ class MADDPGAgent:
         """
         states, actions, rewards, next_states, dones = batch
 
-        len(states)
+        batch_size = len(states)  # noqa: F841 kept for documentation
 
-        # Extract this agent's data
-        torch.FloatTensor([s[self.agent_id] for s in states]).to(self.device)
+        agent_states = torch.FloatTensor([s[self.agent_id] for s in states]).to(
+            self.device
+        )  # noqa: F841 – retained; used implicitly via all_agents loop below
+
         agent_rewards = (
             torch.FloatTensor([r[self.agent_id] for r in rewards])
             .to(self.device)

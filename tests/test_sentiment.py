@@ -1,13 +1,14 @@
 """Tests for Sentiment Analysis"""
 
 import sys
+import os
 
-sys.path.append("../code")
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 
 def test_sentiment_analyzer():
     """Test sentiment analyzer"""
-    from features.sentiment_analyzer import FinBERTSentimentAnalyzer
+    from code.features.sentiment_analyzer import FinBERTSentimentAnalyzer
 
     analyzer = FinBERTSentimentAnalyzer()
     sentiment = analyzer.analyze_ticker_sentiment("AAPL")

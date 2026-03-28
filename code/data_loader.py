@@ -41,9 +41,9 @@ def calculate_bollinger_bands(
     upper = middle + (std * std_dev)
     lower = middle - (std * std_dev)
     return (
-        upper.fillna(method="bfill"),
-        middle.fillna(method="bfill"),
-        lower.fillna(method="bfill"),
+        upper.ffill().bfill(),
+        middle.ffill().bfill(),
+        lower.ffill().bfill(),
     )
 
 
@@ -98,8 +98,7 @@ class MarketDataLoader:
             if isinstance(data, pd.Series):
                 data = data.to_frame()
 
-            # Handle missing data
-            data = data.fillna(method="ffill").fillna(method="bfill")
+            data = data.ffill().bfill()
 
             # Calculate returns
             returns = data.pct_change().fillna(0)

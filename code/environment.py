@@ -203,7 +203,6 @@ class MultiAgentPortfolioEnv:
         Returns:
             observations, rewards, done, info
         """
-        # Store previous capitals for return calculation
         self.agent_capitals.copy()
 
         # Execute actions for each agent
@@ -259,7 +258,6 @@ class MultiAgentPortfolioEnv:
         self.portfolio_values.append(self.agent_capitals.copy())
         self.episode_rewards.append(rewards)
 
-        # Check if episode is done
         self.done = self.current_step >= self.episode_end - 1
 
         # Get next observations

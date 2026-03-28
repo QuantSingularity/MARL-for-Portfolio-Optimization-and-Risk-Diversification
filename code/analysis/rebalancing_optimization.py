@@ -126,10 +126,15 @@ class RebalancingOptimizer:
                     turnover = np.sum(np.abs(combined_actions - previous_positions))
                     portfolio_turnovers.append(turnover)
 
-                    # Calculate transaction costs
-                    costs = turnover * transaction_cost * env.capital
+                    total_capital = np.sum(env.agent_capitals)
+                    costs = turnover * transaction_cost * total_capital
                     total_costs += costs
-                    env.capital -= costs  # Deduct costs from capital
+
+                    # Deduct costs proportionally from each agent's capital
+                    if total_capital > 0:
+                        for agent_id in range(env.n_agents):
+                            agent_share = env.agent_capitals[agent_id] / total_capital
+                            env.agent_capitals[agent_id] -= costs * agent_share
 
                 # Update positions
                 previous_positions = np.concatenate(actions)

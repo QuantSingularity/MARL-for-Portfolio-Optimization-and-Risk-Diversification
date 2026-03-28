@@ -1,15 +1,16 @@
 """Tests for baseline strategies"""
 
 import sys
+import os
 
-sys.path.append("../code")
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 
 def test_evaluate_all_baselines_runs():
-    from baselines import evaluate_all_baselines
-    from config import Config
-    from data_loader import MarketDataLoader
-    from environment import MultiAgentPortfolioEnv
+    from code.baselines import evaluate_all_baselines
+    from code.config import Config
+    from code.data_loader import MarketDataLoader
+    from code.environment import MultiAgentPortfolioEnv
 
     config = Config()
     config.data.data_source = "synthetic"

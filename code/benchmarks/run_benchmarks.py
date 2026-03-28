@@ -60,9 +60,6 @@ class PerformanceBenchmark:
         print(f"\nBenchmarking: {name}")
         print("-" * 60)
 
-        # Record initial memory
-        self.process.memory_info().rss / 1024 / 1024
-
         # Create environment
         loader = MarketDataLoader(config)
         data = loader.prepare_environment_data()
@@ -138,7 +135,7 @@ class PerformanceBenchmark:
         try:
             transformer_config = Config.load("configs/transformer.json")
             benchmarks.append(("Transformer-Optimized", transformer_config))
-        except:
+        except Exception:
             pass
 
         results = []
