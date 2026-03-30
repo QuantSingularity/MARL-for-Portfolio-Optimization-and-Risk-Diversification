@@ -266,7 +266,7 @@ class MADDPGAgent:
 
         batch_size = len(states)  # noqa: F841 kept for documentation
 
-        agent_states = torch.FloatTensor([s[self.agent_id] for s in states]).to(
+        torch.FloatTensor([s[self.agent_id] for s in states]).to(
             self.device
         )  # noqa: F841 – retained; used implicitly via all_agents loop below
 

@@ -294,7 +294,7 @@ if __name__ == "__main__":
     loader = MarketDataLoader(config)
     data = loader.prepare_environment_data()
 
-    print(f"\nData summary:")
+    print("\nData summary:")
     print(f"Total days: {len(data['prices'])}")
     print(f"Training days: {data['train_indices'][1] - data['train_indices'][0]}")
     print(f"Testing days: {data['test_indices'][1] - data['test_indices'][0]}")

@@ -415,7 +415,7 @@ class RebalancingOptimizer:
         )
 
         print(f"\n{'='*80}")
-        print(f"Rebalancing optimization analysis complete!")
+        print("Rebalancing optimization analysis complete!")
         print(f"Results saved to: {output_dir}")
         print(f"{'='*80}")
 

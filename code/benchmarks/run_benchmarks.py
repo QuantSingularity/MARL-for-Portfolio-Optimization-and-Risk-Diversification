@@ -112,7 +112,7 @@ class PerformanceBenchmark:
             final_sharpe=np.mean(sharpe_ratios[-3:]),
         )
 
-        print(f"\nResults:")
+        print("\nResults:")
         print(f"  Avg Episode Time: {result.avg_episode_time:.2f}s")
         print(f"  Total Time: {result.total_time:.2f}s")
         print(f"  Peak Memory: {result.peak_memory_mb:.1f}MB")

@@ -23,12 +23,12 @@ class TestConfig:
         config = Config()
         assert config.env.n_agents == 4
         assert config.env.n_assets == 30
-        assert config.network.use_transformer == True
+        assert config.network.use_transformer
 
     def test_lite_config(self):
         config = Config.load("configs/marl_lite.json")
-        assert config.network.use_transformer == False
-        assert config.env.use_esg == False
+        assert not config.network.use_transformer
+        assert not config.env.use_esg
 
     def test_state_dim_calculation(self):
         config = Config()
@@ -195,7 +195,7 @@ class TestMADDPGAgent:
         agent, state_dim, action_dim = agent_setup
 
         # Create dummy batch
-        batch = {
+        {
             "states": [np.random.randn(32, state_dim)],
             "actions": [np.random.randn(32, action_dim)],
             "rewards": np.random.randn(32, 1),

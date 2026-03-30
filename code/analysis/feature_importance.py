@@ -260,7 +260,7 @@ class FeatureImportanceAnalyzer:
         self._generate_markdown_report(df, f"{output_dir}/FEATURE_ANALYSIS_REPORT.md")
 
         print(f"\n{'='*80}")
-        print(f"Feature importance analysis complete!")
+        print("Feature importance analysis complete!")
         print(f"Results saved to: {output_dir}")
         print(f"{'='*80}")
 
@@ -319,7 +319,7 @@ class FeatureImportanceAnalyzer:
             for feature in recommendations["can_remove_features"]:
                 f.write(f"- {feature}\n")
 
-            f.write(f"\n### Complexity Reduction\n")
+            f.write("\n### Complexity Reduction\n")
             f.write(
                 f"- {recommendations['complexity_reduction']} features can be removed\n"
             )

@@ -405,7 +405,7 @@ if __name__ == "__main__":
     env = MultiAgentPortfolioEnv(config, data)
     obs = env.reset()
 
-    print(f"Environment initialized successfully!")
+    print("Environment initialized successfully!")
     print(f"Number of agents: {env.n_agents}")
     print(f"Assets per agent: {env.assets_per_agent}")
     print(f"Observation dimensions: {[len(o) for o in obs]}")
