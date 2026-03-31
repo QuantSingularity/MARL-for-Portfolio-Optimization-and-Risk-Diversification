@@ -3,10 +3,10 @@ Models module for advanced MADDPG
 Includes Transformer-based architectures and attention mechanisms
 """
 
+from .attention_module import CrossAssetAttention, MultiHeadAttention
+from .regime_detector import MarketRegimeDetector
 from .transformer_actor import TransformerActor
 from .transformer_critic import TransformerCritic
-from .attention_module import MultiHeadAttention, CrossAssetAttention
-from .regime_detector import MarketRegimeDetector
 
 __all__ = [
     "TransformerActor",

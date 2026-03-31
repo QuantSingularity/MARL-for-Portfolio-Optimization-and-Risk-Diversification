@@ -1,8 +1,9 @@
 """Data Processing Utilities"""
 
+from typing import Tuple
+
 import numpy as np
 import pandas as pd
-from typing import Tuple
 
 
 class DataUtils:

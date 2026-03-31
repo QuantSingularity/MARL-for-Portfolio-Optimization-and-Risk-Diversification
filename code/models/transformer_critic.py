@@ -3,9 +3,11 @@ Transformer-based Critic Network
 Centralized critic with transformer architecture for multi-agent coordination
 """
 
+from typing import Optional
+
 import torch
 import torch.nn as nn
-from typing import Optional
+
 from .transformer_actor import PositionalEncoding
 
 

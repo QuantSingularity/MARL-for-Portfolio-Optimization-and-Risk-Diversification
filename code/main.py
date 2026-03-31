@@ -2,18 +2,18 @@
 Main training and evaluation script
 """
 
-import os
-import json
 import argparse
-import numpy as np
-import torch
+import json
+import os
 from datetime import datetime
 
+import numpy as np
+import torch
+from baselines import evaluate_all_baselines
 from config import Config
 from data_loader import MarketDataLoader
 from environment import MultiAgentPortfolioEnv
 from maddpg_agent import MADDPGTrainer
-from baselines import evaluate_all_baselines
 
 
 def set_seed(seed: int):

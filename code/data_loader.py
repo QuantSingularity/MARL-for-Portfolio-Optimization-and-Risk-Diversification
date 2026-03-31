@@ -3,10 +3,11 @@ Data loading and preprocessing module
 Implements technical indicators and market data acquisition
 """
 
+import warnings
+from typing import Dict, List, Tuple
+
 import numpy as np
 import pandas as pd
-from typing import Dict, List, Tuple
-import warnings
 
 warnings.filterwarnings("ignore")
 

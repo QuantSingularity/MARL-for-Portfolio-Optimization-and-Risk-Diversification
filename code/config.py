@@ -4,8 +4,8 @@ Adds support for Transformers, ESG, Dynamic Diversity, Multi-Asset Classes
 """
 
 import json
-from dataclasses import dataclass, asdict, field
-from typing import List, Dict, Any, Optional
+from dataclasses import asdict, dataclass, field
+from typing import Any, Dict, List, Optional
 
 
 @dataclass

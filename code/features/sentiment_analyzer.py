@@ -2,9 +2,10 @@
 Financial Sentiment Analysis using FinBERT
 """
 
-import numpy as np
-from typing import List, Dict
 import warnings
+from typing import Dict, List
+
+import numpy as np
 
 warnings.filterwarnings("ignore")
 

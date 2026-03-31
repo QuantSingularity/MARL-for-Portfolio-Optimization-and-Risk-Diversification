@@ -1,8 +1,9 @@
 """Attention Weight Visualization"""
 
-import numpy as np
-from typing import Optional
 import warnings
+from typing import Optional
+
+import numpy as np
 
 warnings.filterwarnings("ignore")
 

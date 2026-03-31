@@ -3,8 +3,9 @@ Baseline strategies for comparison
 Implements all baselines from the paper
 """
 
-import numpy as np
 from typing import Dict
+
+import numpy as np
 from scipy.optimize import minimize
 
 

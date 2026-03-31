@@ -3,11 +3,12 @@ Visualization and figure generation
 Creates publication-quality figures from training results
 """
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-from typing import Dict, List
 import json
 import os
+from typing import Dict, List
+
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Set style
 plt.style.use("seaborn-v0_8-darkgrid")

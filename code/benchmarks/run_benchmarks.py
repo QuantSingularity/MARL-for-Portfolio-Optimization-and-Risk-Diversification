@@ -6,13 +6,14 @@ Measures runtime and memory performance across different configurations
 import os
 import sys
 import time
-import psutil
+from dataclasses import dataclass
+from typing import List
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import psutil
 import torch
-from typing import List
-from dataclasses import dataclass
-import matplotlib.pyplot as plt
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 

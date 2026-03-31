@@ -3,17 +3,18 @@ Comprehensive Test Suite for MARL Portfolio Optimization
 Achieves 80%+ code coverage with integration and unit tests
 """
 
-import pytest
-import numpy as np
 import os
 import sys
 
+import numpy as np
+import pytest
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from code.config import Config, get_state_dim, get_action_dim
+from code.config import Config, get_action_dim, get_state_dim
 from code.data_loader import MarketDataLoader
 from code.environment import MultiAgentPortfolioEnv
-from code.maddpg_agent import MADDPGTrainer, MADDPGAgent
+from code.maddpg_agent import MADDPGAgent, MADDPGTrainer
 
 
 class TestConfig:
@@ -291,6 +292,7 @@ class TestAPI:
     def client(self):
 
         from code.api.main import app
+
         from fastapi.testclient import TestClient
 
         return TestClient(app)

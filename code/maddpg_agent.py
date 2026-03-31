@@ -3,14 +3,15 @@ MADDPG Agent Implementation
 Implements the complete MADDPG algorithm from the paper
 """
 
+import random
+from collections import deque
+from typing import Dict, List
+
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from collections import deque
-import random
-from typing import List, Dict
 
 
 class ReplayBuffer:

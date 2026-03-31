@@ -3,16 +3,17 @@ FastAPI Production API for MARL Portfolio Optimization
 Provides model serving, portfolio rebalancing, and risk monitoring
 """
 
-from fastapi import FastAPI, HTTPException, BackgroundTasks
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
-from typing import List, Dict, Optional
-from datetime import datetime
-import numpy as np
 import asyncio
-from enum import Enum
 import os
 import sys
+from datetime import datetime
+from enum import Enum
+from typing import Dict, List, Optional
+
+import numpy as np
+from fastapi import BackgroundTasks, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 

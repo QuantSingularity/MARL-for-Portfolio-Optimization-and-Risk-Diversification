@@ -3,9 +3,10 @@ ESG Data Provider
 Integrates Environmental, Social, and Governance scores
 """
 
-import numpy as np
-from typing import Dict, List, Optional
 import warnings
+from typing import Dict, List, Optional
+
+import numpy as np
 
 warnings.filterwarnings("ignore")
 

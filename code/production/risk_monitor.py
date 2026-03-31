@@ -3,13 +3,14 @@ Risk Monitoring Service
 Continuously monitors portfolio risk metrics and sends alerts
 """
 
+import json
+import logging
 import os
 import sys
-import json
 import time
-import logging
 from datetime import datetime
 from typing import Dict, List, Optional
+
 import requests
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

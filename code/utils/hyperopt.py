@@ -1,8 +1,9 @@
 """Hyperparameter Optimization using Optuna"""
 
-import optuna
-from typing import Dict, Callable, Any
 import warnings
+from typing import Any, Callable, Dict
+
+import optuna
 
 warnings.filterwarnings("ignore")
 

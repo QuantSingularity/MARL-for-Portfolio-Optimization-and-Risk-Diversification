@@ -2,8 +2,9 @@
 Alternative Data Sources Provider
 """
 
-import numpy as np
 from typing import List
+
+import numpy as np
 
 
 class AlternativeDataProvider:
