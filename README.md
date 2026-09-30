@@ -27,7 +27,7 @@ A production-ready Multi-Agent Reinforcement Learning system for portfolio optim
 | Feature               | Description                                                                           |
 | :-------------------- | :------------------------------------------------------------------------------------ |
 | **MADDPG Agents**     | Multi-agent collaborative portfolio allocation with MLP and Transformer architectures |
-| **MARL-Lite**         | Simplified MLP using top 5 features — 65% faster training, 65% less memory            |
+| **MARL-Lite**         | Simplified MLP using top 5 features - 65% faster training, 65% less memory            |
 | **Dynamic Diversity** | Adjusts diversification penalty based on real-time VIX for regime-aware risk control  |
 | **ESG and Sentiment** | FinBERT-based sentiment and simulated ESG scores as additional state signals          |
 | **FastAPI**           | 15+ endpoints for model serving, rebalancing, and health checks                       |
