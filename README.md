@@ -2,7 +2,7 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://www.docker.com/)
-[![Tests](https://img.shields.io/badge/tests-82%25%20coverage-green.svg)]()
+[![Tests](https://img.shields.io/badge/tests-82%25%20coverage-green.svg)](<>)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A production-ready Multi-Agent Reinforcement Learning system for portfolio optimization and risk diversification. Built on MADDPG with Transformer and MLP variants, dynamic volatility-based diversification, ESG and sentiment integration, and a full FastAPI deployment stack.
